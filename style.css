@@ -1,0 +1,141 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: rgba(53, 171, 106, 0.705);
+    font-family: 'Aleo', serif;
+}
+
+main {
+    height: 92vh;
+    top: 8vh;
+    width: 100%;
+    background-position: center;
+    background-image: url('https://cdn.pixabay.com/photo/2017/07/04/06/15/waterfall-2470085_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(233, 218, 218, 0.842);
+}
+
+h3 {
+    margin: 0;
+    padding: 1vh;
+}
+
+.link-sections {
+    color: rgba(233, 218, 218, 0.842);
+    font-size: 2rem;
+    text-shadow: yellowgreen;
+}
+
+.logo {
+    color: rgb(5, 54, 110);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 24px;
+}
+
+.logo h4 {
+    box-shadow: 5px 5px 5px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(5, 54, 110);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 5px 5px 5px;
+    border-radius: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: rgb(5, 54, 110);
+    margin: 5px;
+    transition: all 0.78s ease;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    ul {
+        margin: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: #559935;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 35%;
+        transform: translateX(100%);
+        transition: transform 0.78s ease-in;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@keyframes navLinkFade {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
